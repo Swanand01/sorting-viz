@@ -1,0 +1,40 @@
+.container{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.bars{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    height: 90%;
+}
+
+.bar{
+    border-left: 12px solid black;
+    margin-left: 2px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+}
+
+.sliders{
+    height: 100%;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3.5px;
+}
+
+@media (max-width:900px) {
+    .bars{
+        height: 50vh;
+        margin-bottom: 1vmax;
+    }
+    .bar{
+        border-left: 1.3vmin solid black;
+    }
+}
