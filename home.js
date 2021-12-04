@@ -297,10 +297,10 @@ async function merge(arr, l, m, h) {
 
     // color the partitions
     for (let i = l; i <= m; i++)
-        document.querySelector(`#index_${i}`).style.borderColor = "orange";
+        document.querySelector(`#index_${i}`).style.borderColor = colorCode.orange;
 
     for (let i = m + 1; i <= h; i++)
-        document.querySelector(`#index_${i}`).style.borderColor = "yellow";
+        document.querySelector(`#index_${i}`).style.borderColor = colorCode.yellow;
 
     await delay(1 / parseInt(document.querySelector("#speed").value));
 
@@ -313,13 +313,13 @@ async function merge(arr, l, m, h) {
 
         if (arr[i] <= arr[j]) {
             document.querySelector(`#index_${l + k}`).style.height = `${auxArray[i]}px`;
-            document.querySelector(`#index_${l + k}`).style.borderColor = "lightgreen";
+            document.querySelector(`#index_${l + k}`).style.borderColor = colorCode.green;
             await delay(1 / parseInt(document.querySelector("#speed").value));
             temp[k++] = arr[i++];
         }
         else {
             document.querySelector(`#index_${l + k}`).style.height = `${auxArray[j]}px`;
-            document.querySelector(`#index_${l + k}`).style.borderColor = "lightgreen";
+            document.querySelector(`#index_${l + k}`).style.borderColor = colorCode.green;
             await delay(1 / parseInt(document.querySelector("#speed").value));
             temp[k++] = arr[j++];
         }
@@ -327,14 +327,14 @@ async function merge(arr, l, m, h) {
 
     while (i <= m) {
         document.querySelector(`#index_${l + k}`).style.height = `${auxArray[i]}px`;
-        document.querySelector(`#index_${l + k}`).style.borderColor = "lightgreen";
+        document.querySelector(`#index_${l + k}`).style.borderColor = colorCode.green;
         await delay(1 / parseInt(document.querySelector("#speed").value));
         temp[k++] = arr[i++];
     }
 
     while (j <= h) {
         document.querySelector(`#index_${l + k}`).style.height = `${auxArray[j]}px`;
-        document.querySelector(`#index_${l + k}`).style.borderColor = "lightgreen";
+        document.querySelector(`#index_${l + k}`).style.borderColor = colorCode.green;
         await delay(1 / parseInt(document.querySelector("#speed").value));
         temp[k++] = arr[j++];
     }
