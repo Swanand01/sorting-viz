@@ -1,13 +1,29 @@
 .container{
     margin-top: 10px;
     margin-bottom: 10px;
+
+    height: 100vh;
+}
+
+.row{
+    height: 100%;
 }
 
 .bars{
     margin-top: 10px;
     display: flex;
     justify-content: center;
-    height: 90%;
+    height: 60%;
+}
+
+.accordion{
+    margin-bottom: 4px;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
 }
 
 .bar{
@@ -22,7 +38,7 @@
 }
 
 .sliders{
-    height: 100%;
+    height: 120px;
     background-color: aquamarine;
     display: flex;
     flex-direction: column;
