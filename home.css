@@ -1,23 +1,16 @@
+body{
+    background: #0f0c29;
+    color: ghostwhite;
+}
+
 .container{
     margin-top: 10px;
     margin-bottom: 10px;
-
-    height: 100vh;
+    height: 90vh;
 }
 
 .row{
     height: 100%;
-}
-
-.bars{
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    height: 60%;
-}
-
-.accordion{
-    margin-bottom: 4px;
 }
 
 .main{
@@ -26,23 +19,68 @@
     row-gap: 10px;
 }
 
+.bars{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    height: 60vh;
+    margin-bottom: 6px;
+}
+
 .bar{
-    border-left: 12px solid black;
+    border-left: 12px solid #65C7F7;
     margin-left: 2px;
 }
 
+.accordion{
+    margin-bottom: 6px;
+    color: ghostwhite;
+}
+
+.accordion-button{
+    background-color: #0f0c29;
+    color: ghostwhite;
+}
+  
+.accordion-button.collapsed::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-body{
+    background-color: #0f0c29;
+}
+
 .buttons{
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
-    row-gap: 4px;
+    row-gap: 6px;
+}
+
+.btn-outline-primary{
+    border-color: #65C7F7;
+    color: #65C7F7;
 }
 
 .sliders{
     height: 120px;
-    background-color: aquamarine;
     display: flex;
     flex-direction: column;
     row-gap: 3.5px;
+}
+
+.image-div{
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.image-file{
+    max-width: 100%;
+}
+
+.code{
+    text-align: left;
 }
 
 @media (max-width:900px) {
@@ -51,6 +89,12 @@
         margin-bottom: 1vmax;
     }
     .bar{
-        border-left: 1.3vmin solid black;
+        border-left: 1.3vmin solid #65C7F7;
     }
 }
+
+
+/* background: #0f0c29;
+background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+color: ghostwhite; */
