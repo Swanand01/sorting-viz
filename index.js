@@ -57,7 +57,7 @@ quickSortBtn.addEventListener('click', async () => {
     disableInteraction();
     await quickSort(array, 0, array.length - 1);
     for (let i = 0; i < array.length; i++) {
-        document.querySelector(`#index_${i}`).style.borderColor = " lightgreen"
+        document.querySelector(`#index_${i}`).style.borderColor = colorCode.green;
         await delay(1 / parseInt(document.querySelector("#speed").value))
     }
     enableInteraction();
@@ -417,16 +417,16 @@ async function mergeSort(arr, l, h) {
 async function partition(arr, l, h) {
     let pivot = l;
     let i = l + 1;
-    document.querySelector(`#index_${pivot}`).style.borderColor = " red"
+    document.querySelector(`#index_${pivot}`).style.borderColor = colorCode.red;
     for (let j = i; j <= h; j++) {
         if (arr[j] <= arr[pivot]) {
             swapElements(document.querySelector(`#index_${j}`), document.querySelector(`#index_${i}`));
 
-            document.querySelector(`#index_${j}`).style.borderColor = "aqua";
-            document.querySelector(`#index_${i}`).style.borderColor = "coral";
+            document.querySelector(`#index_${j}`).style.borderColor = colorCode.darkBlue;
+            document.querySelector(`#index_${i}`).style.borderColor = colorCode.purple;
             await delay(1 / parseInt(document.querySelector("#speed").value));
-            document.querySelector(`#index_${i}`).style.borderColor = "yellow";
-            document.querySelector(`#index_${j}`).style.borderColor = "black";
+            document.querySelector(`#index_${i}`).style.borderColor = colorCode.yellow;
+            document.querySelector(`#index_${j}`).style.borderColor = colorCode.blue;
             swap(arr, j, i);
             await delay(1 / parseInt(document.querySelector("#speed").value));
             i++;
@@ -435,9 +435,9 @@ async function partition(arr, l, h) {
     swapElements(document.querySelector(`#index_${pivot}`), document.querySelector(`#index_${i - 1}`));
     swap(arr, pivot, i - 1);
     await delay(1 / parseInt(document.querySelector("#speed").value));
-    document.querySelector(`#index_${i - 1}`).style.borderColor = "lightgreen";
+    document.querySelector(`#index_${i - 1}`).style.borderColor = colorCode.green;
     for (let j = l; j < i - 1; j++)
-        document.querySelector(`#index_${j}`).style.borderColor = "black";
+        document.querySelector(`#index_${j}`).style.borderColor = colorCode.blue;
     return i - 1;
 }
 
@@ -477,12 +477,12 @@ async function maxHeapify(arr, l, h) {
             }
 
             if (arr[root] < arr[max]) {
-                document.querySelector(`#index_${root}`).style.borderColor = "orange";
-                document.querySelector(`#index_${max}`).style.borderColor = "yellow";
+                document.querySelector(`#index_${root}`).style.borderColor = colorCode.orange;
+                document.querySelector(`#index_${max}`).style.borderColor = colorCode.yellow;
                 await delay(0.5 / parseInt(document.querySelector("#speed").value));
                 swapElements(barsElem.querySelector(`#index_${root}`), barsElem.querySelector(`#index_${max}`));
-                document.querySelector(`#index_${root}`).style.borderColor = "black";
-                document.querySelector(`#index_${max}`).style.borderColor = "black";
+                document.querySelector(`#index_${root}`).style.borderColor = colorCode.blue;
+                document.querySelector(`#index_${max}`).style.borderColor = colorCode.blue;
                 swap(arr, root, max);
                 await maxHeapify(arr, max, h);
             }
@@ -495,9 +495,9 @@ async function heapSort(arr, h) {
         await maxHeapify(arr, 0, h);
         await delay(0.5 / parseInt(document.querySelector("#speed").value));
         swapElements(barsElem.querySelector(`#index_${0}`), barsElem.querySelector(`#index_${h}`));
-        document.querySelector(`#index_${h}`).style.borderColor = "lightgreen";
+        document.querySelector(`#index_${h}`).style.borderColor = colorCode.green;
         swap(arr, 0, h);
         h--;
     }
-    document.querySelector(`#index_${0}`).style.borderColor = "lightgreen";
+    document.querySelector(`#index_${0}`).style.borderColor = colorCode.green;
 }

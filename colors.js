@@ -4,6 +4,7 @@ const colorCode = {
     green: "#67B26F",
     purple: "#ad5389",
     darkBlue: "#0000ff",
-    orange: "#ffb86c"
+    orange: "#ffb86c",
+    red: "#ff5555"
 };
 export { colorCode }
